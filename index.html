@@ -31,6 +31,158 @@
 
     <title>ProFoods Global</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+
+    <style>
+
+.modal {
+  font-family: -apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
+}
+
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__container {
+  background-color: #fff;
+  padding: 30px;
+  max-width: 500px;
+  max-height: 100vh;
+  border-radius: 4px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal__title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  color: #00449e;
+  box-sizing: border-box;
+}
+
+.modal__close {
+  background: transparent;
+  border: 0;
+}
+
+.modal__header .modal__close:before { content: "\2715"; }
+
+.modal__content {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  color: rgba(0,0,0,.8);
+}
+
+.modal__btn {
+  font-size: .875rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  background-color: #e6e6e6;
+  color: rgba(0,0,0,.8);
+  border-radius: .25rem;
+  border-style: none;
+  border-width: 0;
+  cursor: pointer;
+  -webkit-appearance: button;
+  text-transform: none;
+  overflow: visible;
+  line-height: 1.15;
+  margin: 0;
+  will-change: transform;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  transition: -webkit-transform .25s ease-out;
+  transition: transform .25s ease-out;
+  transition: transform .25s ease-out,-webkit-transform .25s ease-out;
+}
+
+.modal__btn:focus, .modal__btn:hover {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.modal__btn-primary {
+  background-color: #00449e;
+  color: #fff;
+}
+
+
+
+    /**************************\
+      Demo Animation Style
+        \**************************/
+    @keyframes mmfadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes mmfadeOut {
+      from { opacity: 1; }
+      to { opacity: 0; }
+    }
+
+    @keyframes mmslideIn {
+      from { transform: translateY(15%); }
+      to { transform: translateY(0); }
+    }
+
+    @keyframes mmslideOut {
+      from { transform: translateY(0); }
+      to { transform: translateY(-10%); }
+    }
+
+    .micromodal-slide {
+      display: none;
+    }
+
+    .micromodal-slide.is-open {
+      display: block;
+    }
+
+    .micromodal-slide[aria-hidden="false"] .modal__overlay {
+      animation: mmfadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+    }
+
+    .micromodal-slide[aria-hidden="false"] .modal__container {
+      animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1);
+    }
+
+    .micromodal-slide[aria-hidden="true"] .modal__overlay {
+      animation: mmfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+    }
+
+    .micromodal-slide[aria-hidden="true"] .modal__container {
+      animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1);
+    }
+
+    .micromodal-slide .modal__container,
+    .micromodal-slide .modal__overlay {
+      will-change: transform;
+    }
+    </style>
 
     <style id="classic-theme-styles-inline-css" type="text/css">
       /*! This file is auto-generated */
@@ -463,6 +615,21 @@
               itemtype="http://schema.org/WebPage"
             >
               <section class="entry-content" itemprop="text">
+                <div style="display: flex; flex-direction: column; padding: 20px; align-items: center; background-color: #fff">
+                  <div class="">
+                    <div style="">
+                      <img src="identity.jpeg" alt="" style="object-fit: cover; height: 100%">
+                    </div>
+                  </div>
+                <div style="text-align: center">
+                  <h3>Shree Radhe Rani International Trading</h3>
+                  <br>
+                  <h4>
+                    World's first company to receive the US Identity Preserved Certification.
+                  </h4>
+                </div>
+                </div>
+
                 <div class="hero half-hero content-block right">
                   <div class="grid-container fluid full">
                     <div class="grid-x">
@@ -489,14 +656,16 @@
                       <div class="text large-6 cell has-grain">
                         <div class="text-wrapper">
                           <div class="hero-text">
-                            <h1>ProFoods Global</h1>
+                            <h1>Shree Radhe Rani International Trading</h1>
 
                             <div class="paragraph-text">
                               <p>
-                                <span class="emphasized-text">Worlds first US IP certification company</span>
+                                <span class="emphasized-text">Worlds First US IP certified company</span>
+                                <br>
                                 We are a leading importer, processor, and
-                                distributor of premium food products and
-                                ingredients in Nepal.
+                                distributor of <br> 
+                                premium agri commodities, food ingredients
+                                in Nepal.
                                 <br>
                                 We are dedicated to
                                 delivering high-quality products that meet the
@@ -532,23 +701,19 @@
                             </h4>
                             <ul>
                               <li style="padding: 5px">
-                                <b>Pulses and Beans:</b> High-grade lentils,
-                                chickpeas, kidney beans, and more.
-                              </li>
+                                <b>Pulses, Beans and Nuts:</b> We are suppliers of premium and speciality pulses, beans and nuts. 
+                                We specialize in Peanuts, and other varieties of super food, nuts and seeds.</li>
                               <li style="padding: 5px">
                                 <b>Edible Oils:</b> Quality oils suitable for
                                 household and commercial use.
                               </li>
                               <li style="padding: 5px">
-                                <b>Spices:</b> Authentic and flavorful spices
-                                that enrich culinary experiences.
-                              </li>
-                              <li style="padding: 5px">
-                                <b>Dry Fruits:</b> A wide selection of dried
+                                <b>Spices and Dry Fruits:</b> Authentic and flavorful spices
+                                that enrich culinary experiences. A wide selection of dried
                                 fruits packed with nutrition.
                               </li>
                               <li style="padding: 5px">
-                                <b>Feed Industry Products:</b> Essential grains
+                                <b>Feed Industry Ingredients:</b> Essential grains
                                 such as corn, wheat, barley, corn bran, and
                                 wheat bran for livestock and poultry.
                               </li>
@@ -569,40 +734,45 @@
                   <div class="grid-container">
                     <div class="grid-x grid-padding-x align-center">
                       <div class="image small-12 large-6 cell">
-                        <div class="image-container overlay-special_offer" style="height: 400px">
+                        <div class="overlay-special_offer">
                           <img
-                            src="owner.jpeg"
-                            width="2560"
-                            height="1851"
+                            src="shree.jpg"
                             alt=""
+                            width="50%"
                             style="object-fit: cover; height: 100%"
                           />
+                          <p style="padding: 5px">Late Shri Kunji Lal Agrawal</p>
+                          <img
+                            src="owner.jpeg"
+                            alt=""
+                            width="50%"
+                            style="object-fit: cover; height: 100%"
+                          />
+                          <p style="padding: 5px">Mr. Gaurav Agrawal</p>
                         </div>
                       </div>
                       <div
                         class="hero-text small-12 large-6 cell grid-y align-center"
                       >
                         <div class="text-wrapper padding-left-2">
-                          <h4>An unbroken legacy</h4>
+                          <h4>A third generation family enterprise</h4>
 
                           <div class="description">
-                            <p>
-                              Late shri Kunji Lal Agrawal (founder)
-                              <br />
 
-                              Mr. Arun Kumar Singhania
-                              <br />
-                              Mr. Gaurav Agrawal
+                            <p style="padding: 5px">
+                            Shree Radhe Rani International Trading was founded nearly five decades ago by Late Shri Kunji Lal Agrawal, starting as a brokerage firm that grew into a prominent import and trading business, pioneering in agri-business.
                             </p>
-                            <hr />
 
-                            <p>
-                              Singhania Enterprises
-                              <br />
+                            <p style="padding: 5px">
+                            Initially focused on wheat, maize, and paddy trading, the company diversified under Mr. Arun Kumar Singhania's leadership, expanding imports globally and venturing into rice and spices.
+                            </p>
 
-                              Shree Radhe Rani International Trading
-                              <br />
-                              Singhania Snacks Industries
+                            <p style="padding: 5px">
+                            Mr. Gaurav Agrawal further broadened operations, moving into agri-processing and adding oils and food-grade chemicals to the portfolio.
+                            </p>
+
+                            <p style="padding: 5px">
+                            Today, this third-generation family enterprise is a market leader in importing, processing, and distributing agri-commodities.
                             </p>
                           </div>
                         </div>
@@ -611,34 +781,34 @@
                   </div>
                 </div>
                 <div
-                  class="hero half-feature content-block right offwhite bird-grain"
-                >
-                  <div class="grid-container fluid full">
-                    <div class="grid-x">
-                      <div class="feature large-6 cell">
-                        <div class="background-image-container">
+                    class="hero half-feature content-block right offwhite bird-grain"
+                    >
+                    <div class="grid-container fluid full">
+                      <div class="grid-x">
+                        <div class="feature large-6 cell">
+                          <div class="background-image-container">
                             <img
-                              alt="news"
-                              src="news.png"
-                            />
+                                alt="news"
+                                src="news.png"
+                                />
+                          </div>
                         </div>
-                      </div>
-                      <div class="text large-6 cell">
-                        <div class="text-wrapper">
-                              <a target="_blank" href="https://kathmandupost.com/national/2024/09/19/us-identity-preservation-boosts-nepal-s-soy-industry">Read the full article</a>                              
-                              <blockquote>One of the event's highlights was Shree Radhe Rani International Trading receiving the first Identity Preservation Certificate in the world. This certification allows Nepali soy sauce manufacturers using American soy to display the ‘Identity Preserved United States’ logo on their products, which will help them boost their credibility and market value in the global market.</blockquote>
-                              <a target="_blank" href="https://usidentitypreserved.org/u-s-identity-preserved-shines-in-nepal/">Read the full article</a>                              
-                              <blockquote>Not only did they award a certificate to Shree Radne Rani International Trading, one of the first international companies to use the U.S. Identity Preserved brand mark on their retail packaging and marketing materials, SSGA also made inroads with other soy food manufacturers during retail market visits and at the U.S. Identity Preserved International Workshop.</blockquote>
+                        <div class="text large-6 cell">
+                          <div class="text-wrapper">
+                            <a target="_blank" href="https://kathmandupost.com/national/2024/09/19/us-identity-preservation-boosts-nepal-s-soy-industry">Read the full article</a>                              
+                            <blockquote>One of the event's highlights was Shree Radhe Rani International Trading receiving the first Identity Preservation Certificate in the world. This certification allows Nepali soy sauce manufacturers using American soy to display the ‘Identity Preserved United States’ logo on their products, which will help them boost their credibility and market value in the global market.</blockquote>
+                            <a target="_blank" href="https://usidentitypreserved.org/u-s-identity-preserved-shines-in-nepal/">Read the full article</a>                              
+                            <blockquote>Not only did they award a certificate to Shree Radne Rani International Trading, one of the first international companies to use the U.S. Identity Preserved brand mark on their retail packaging and marketing materials, SSGA also made inroads with other soy food manufacturers during retail market visits and at the U.S. Identity Preserved International Workshop.</blockquote>
 
-                        </div>
-                        <div class="illustration bird-grain">
-                          <img
-                            src="bird-grain.webp"
-                          />
+                          </div>
+                          <div class="illustration bird-grain">
+                            <img
+                                src="bird-grain.webp"
+                                />
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
                 </div>
               </section>
 
@@ -653,9 +823,9 @@
               <div class="subscription-form medium-8 large-6 cell">
                 <h3 class="supertitle">Stay in Touch</h3>
                 <p class="h6">
-                  Pro Foods Global is here to serve your food product and
-                  ingredient needs. For inquiries, partnerships, or more
-                  information, please get in touch
+                Pro Foods Global is here to serve your food product and
+                ingredient needs. For inquiries, partnerships, or more
+                information, please get in touch
                 </p>
               </div>
             </div>
@@ -675,62 +845,88 @@
             </div>
 
             <div
-              style="
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-              "
-            >
-              <div style="display: flex">
-                <div style="max-width: 30px; margin-right: 2px">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    width="100%"
-                    class="size-6"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"
-                    />
-                  </svg>
-                </div>
-                <a style="color: white" href="tel:+9779840068644"
-                  >+9779840068644</a
+                style="
+                       display: flex;
+                       justify-content: center;
+                       align-items: center;
+                       flex-direction: column;
+                       "
                 >
-              </div>
+                <div style="display: flex">
+                  <div style="max-width: 30px; margin-right: 2px">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        width="100%"
+                        class="size-6"
+                        >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"
+                            />
+                    </svg>
+                  </div>
+              <a style="color: white" href="tel:+9779801221841"
+                                      >+9779801221841</a
+                                    >
+                </div>
 
-              <div style="display: flex">
-                <div style="max-width: 30px; margin-right: 2px">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    width="100%"
-                    class="size-6"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
-                    />
-                  </svg>
+                <div style="display: flex">
+                  <div style="max-width: 30px; margin-right: 2px">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        width="100%"
+                        class="size-6"
+                        >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+                            />
+                    </svg>
+                  </div>
+                  <a href="mailto:indrenishakti@gmail.com" style="color: white"
+                                                           >indrenishakti@gmail.com</a
+                                                         >
                 </div>
-                <a href="mailto:info@profoodsglobal.com" style="color: white"
-                  >info@profoodsglobal.com</a
-                >
-              </div>
             </div>
           </div>
         </footer>
       </div>
     </div>
+
+    <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+      <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+          <header class="modal__header">
+            <h2 class="modal__title" id="modal-1-title">
+              Shree Radhe Rani Traders
+            </h2>
+            <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+          </header>
+          <main class="modal__content" id="modal-1-content">
+            <img src="tofu.jpeg" alt="">
+            <p>Come find us at <a href="https://runforprotein.com.np/home" target="_blank">Right to Protein Run</a> and have a taste of our delicious tofu!</p>
+          </main>
+          <footer class="modal__footer">
+            <button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
+          </footer>
+        </div>
+      </div>
+    </div>
   </body>
+  <script>
+      document.addEventListener("DOMContentLoaded", () => {
+            MicroModal.init();
+         MicroModal.show('modal-1');
+          });
+  </script>
 </html>
