@@ -32,6 +32,8 @@
     <title>Shree Radhe Rani International Trading</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+    <script src=" https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js "></script>
+    <link href=" https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css " rel="stylesheet">
 
     <style>
 
@@ -806,12 +808,30 @@
                   <div class="grid-container fluid full">
                     <div class="grid-x">
                       <div class="feature large-6 cell">
-                        <div class="background-image-container">
-                          <img
-                            alt="news"
-                            src="news.png"
-                            />
-                        </div>
+    <section class="splide background-image-container" aria-label="Basic Structure Example">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <img src="photo_1.jpeg" alt="">
+          </li>
+          <li class="splide__slide">
+            <img src="photo_2.jpeg" alt="">
+          </li>
+          <li class="splide__slide">
+            <img src="photo_3.jpeg" alt="">
+          </li>
+          <li class="splide__slide">
+            <img src="photo_4.jpeg" alt="">
+          </li>
+        </ul>
+      </div>
+    </section>
+                        <!-- <div class="background-image-container"> -->
+                        <!--   <img -->
+                        <!--     alt="news" -->
+                        <!--     src="news.png" -->
+                        <!--     /> -->
+                        <!-- </div> -->
                       </div>
                       <div class="text large-6 cell">
                         <div class="text-wrapper" style="padding-bottom: 0px">
@@ -958,5 +978,11 @@
       MicroModal.init();
       MicroModal.show('modal-1');
     });
+var splide = new Splide( '.splide', {
+  type  : 'fade',
+  rewind: true,
+} );
+
+splide.mount();
   </script>
 </html>
