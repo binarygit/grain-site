@@ -809,7 +809,7 @@
                     <div class="grid-x">
                       <div class="feature large-6 cell">
     <section class="splide background-image-container" aria-label="Basic Structure Example">
-      <div class="splide__track">
+      <div class="splide__track" style="height: 100%">
         <ul class="splide__list">
           <li class="splide__slide">
             <img src="photo_1.jpeg" alt="">
@@ -978,11 +978,17 @@
       MicroModal.init();
       MicroModal.show('modal-1');
     });
-var splide = new Splide( '.splide', {
-  type  : 'fade',
-  rewind: true,
-} );
 
-splide.mount();
+    var splide = new Splide( '.splide', {
+      type  : 'fade',
+      rewind: true,
+    } );
+
+    splide.mount();
+
+    setTimeout(() => {
+          var track = document.querySelector('#splide01-track');
+          track.style.height = "100%";
+    }, 2000);
   </script>
 </html>
